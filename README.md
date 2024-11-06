@@ -100,8 +100,3 @@ Verifique o status dos testes no GitHub Actions através da aba **Actions** no r
 ## Contribuindo
 
 Sinta-se à vontade para contribuir com este projeto. Para relatar problemas ou sugerir melhorias, por favor, abra um **issue** ou envie um **pull request**.
-
-## Licença
-
-Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para mais detalhes.
-```
