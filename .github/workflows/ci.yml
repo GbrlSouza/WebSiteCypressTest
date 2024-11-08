@@ -23,10 +23,7 @@ jobs:
         with:
           name: screenshots
           path: cypress/screenshots
-          if-no-files-found: ignore
-      
-      - name: Run Cypress Tests
-        run: npx cypress run        
+          if-no-files-found: ignore      
 
       - name: List Cypress Folder
         run: |
