@@ -13,11 +13,15 @@ describe('Adicionar Usuário', () => {
   })
 
   it('deve adicionar um usuário com informações válidas', () => {
+    const ran = Math.floor(Math.random() * 1000)
+    const randomName = `Usuário ${ran}`
+    const randomEmail = `usuario${ran}@email.com`
+
     cy.get('input#nome')
-      .type('João da Silva')
+      .type(randomName)
 
     cy.get('input#email')
-      .type('joao.silva@example.com')
+      .type(randomEmail)
 
     cy.get('button[type="submit"]')
       .click()
@@ -25,16 +29,29 @@ describe('Adicionar Usuário', () => {
     cy.url()
       .should('include', 'index.php')
 
-    cy.contains('li.list-group-item', 'João da Silva - joao.silva@example.com')
+    cy.contains('li.list-group-item', `${randomName} - ${randomEmail}`)
       .should('exist')
   })
 
   it('não deve permitir adicionar um usuário com email duplicado', () => {
+    const existingEmail = 'usuario.duplicado@example.com'
+
     cy.get('input#nome')
-      .type('Maria Santos')
+      .type('Nome Inicial')
 
     cy.get('input#email')
-      .type('joao.silva@example.com')
+      .type(existingEmail)
+
+    cy.get('button[type="submit"]')
+      .click()
+
+    cy.visit('http://localhost/WebSiteCypressTest/add_user.php')
+
+    cy.get('input#nome')
+      .type('Nome Repetido')
+
+    cy.get('input#email')
+      .type(existingEmail)
 
     cy.get('button[type="submit"]')
       .click()
