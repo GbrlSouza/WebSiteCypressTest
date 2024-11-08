@@ -10,6 +10,8 @@ describe('Adicionar Usuário', () => {
 
     cy.get('input#email')
       .should('exist')
+      
+    cy.wait(500)
   })
 
   it('deve adicionar um usuário com informações válidas', () => {
@@ -31,6 +33,8 @@ describe('Adicionar Usuário', () => {
 
     cy.contains('li.list-group-item', `${randomName} - ${randomEmail}`)
       .should('exist')
+    
+     cy.wait(500)
   })
 
   it('não deve permitir adicionar um usuário com email duplicado', () => {
@@ -47,6 +51,8 @@ describe('Adicionar Usuário', () => {
 
     cy.visit('http://localhost/WebSiteCypressTest/add_user.php')
 
+    cy.wait(500)
+
     cy.get('input#nome')
       .type('Nome Repetido')
 
@@ -58,5 +64,7 @@ describe('Adicionar Usuário', () => {
 
     cy.contains('Erro ao adicionar usuário.')
       .should('exist')
+    
+     cy.wait(500)
   })
 })
