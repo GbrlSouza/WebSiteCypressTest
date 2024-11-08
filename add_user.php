@@ -7,11 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = $_POST['email'];
 
   if (addUser($nome, $email)) {
+    // Garantir que não haja saída antes do redirecionamento
+    ob_start();
     header('Location: index.php');
+    ob_end_flush();
+    exit; // Importante para garantir que o script seja finalizado
   } else {
     echo "Erro ao adicionar usuário.";
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adicionar Usuário</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -39,8 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <button type="submit" class="btn btn-primary">Adicionar</button>
     </form>
   </div>
-
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

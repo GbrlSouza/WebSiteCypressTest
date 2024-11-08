@@ -15,9 +15,7 @@ O objetivo deste projeto é demonstrar como realizar testes **automatizados** de
 ## Funcionalidades da Aplicação
 
 - Adicionar **Usuários** com nome e e-mail.
-- Adicionar **Postagens** associadas a usuários.
-- Adicionar **Comentários** nas postagens.
-- Exibir **Usuários**, **Postagens** e **Comentários** de forma simples.
+- Exibir **Usuários** de forma simples.
 
 ## Tecnologias Utilizadas
 
@@ -29,12 +27,13 @@ O objetivo deste projeto é demonstrar como realizar testes **automatizados** de
 
 ## Como Usar
 
-### 1. Clonar o Repositório
+### 1. Clonar o Repositório na pasta `htdocs` do `xampp`
 
 ```bash
 git clone https://github.com/GbrlSouza/WebSiteCypressTest.git
 cd fullstack-test
 ```
+Agora, você pode acessar a aplicação em `http://localhost/WebSiteCypressTest/index.php`.
 
 ### 2. Configurar o Banco de Dados
 
@@ -42,23 +41,14 @@ cd fullstack-test
 2. Altere as credenciais no arquivo `includes/db.php` com as informações do seu banco de dados:
 
 ```php
-$servername = "sql308.infinityfree.com";
-$username = "if0_37666554";
-$password = "h9e8s3w2";
-$dbname = "if0_37666554_XXX";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
 ```
 
-### 3. Rodar o Servidor Local (Opcional)
 
-Para testar a aplicação localmente, você pode rodar um servidor PHP embutido:
-
-```bash
-php -S localhost:8000
-```
-
-Agora, você pode acessar a aplicação em `http://localhost:8000`.
-
-### 4. Rodar os Testes com Cypress
+### 3. Rodar os Testes com Cypress
 
 1. Instale o Cypress como dependência do projeto:
 
@@ -74,7 +64,7 @@ npx cypress open
 
 Isso abrirá a interface do Cypress, onde você pode rodar os testes.
 
-### 5. GitHub Actions
+### 4. GitHub Actions
 
 Este projeto está configurado com **GitHub Actions** para automação dos testes. Sempre que uma alteração for feita no repositório, os testes serão executados automaticamente.
 
@@ -83,18 +73,12 @@ Verifique o status dos testes no GitHub Actions através da aba **Actions** no r
 ## Estrutura do Projeto
 
 ```
-/project-folder
-    /assets
-        /css
-            bootstrap.min.css
-    /images
+/WebSiteCypressTest
     /includes
         db.php
         functions.php
     index.php
     add_user.php
-    add_post.php
-    add_comment.php
 ```
 
 ## Contribuindo

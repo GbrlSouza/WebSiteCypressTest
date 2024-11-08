@@ -1,6 +1,6 @@
 <?php
-include('includes/db.php');
-include('includes/functions.php');
+  include('includes/db.php');
+  include('includes/functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include('includes/functions.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Simples com MySQL</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -20,44 +20,14 @@ include('includes/functions.php');
     <h3 class="mt-5">Usuários</h3>
     <ul class="list-group">
       <?php
-      $usuarios = getUsers();
-      foreach ($usuarios as $usuario) {
-        echo "<li class='list-group-item'>{$usuario['nome']} - {$usuario['email']}</li>";
-      }
+        $usuarios = getUsers();
+        foreach ($usuarios as $usuario) { echo "<li class='list-group-item'>{$usuario['nome']} - {$usuario['email']}</li>"; }
       ?>
     </ul>
-
-    <h3 class="mt-5">Postagens</h3>
-    <ul class="list-group">
-      <?php
-      $posts = getPosts();
-      foreach ($posts as $post) {
-        echo "<li class='list-group-item'>
-                        <strong>{$post['titulo']}</strong><br>
-                        {$post['conteudo']}
-                    </li>";
-      }
-      ?>
-    </ul>
-
-    <h3 class="mt-5">Comentários</h3>
-    <ul class="list-group">
-      <?php
-      $comentarios = getComments();
-      foreach ($comentarios as $comentario) {
-        echo "<li class='list-group-item'>
-                        {$comentario['comentario']} - Usuário ID: {$comentario['usuario_id']} (Post ID: {$comentario['post_id']})
-                    </li>";
-      }
-      ?>
-    </ul>
-
     <a href="add_user.php" class="btn btn-primary mt-3">Adicionar Novo Usuário</a>
-    <a href="add_post.php" class="btn btn-secondary mt-3">Adicionar Nova Postagem</a>
-    <a href="add_comment.php" class="btn btn-success mt-3">Adicionar Novo Comentário</a>
   </div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
