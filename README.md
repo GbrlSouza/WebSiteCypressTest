@@ -1,6 +1,6 @@
-# Fullstack Test - Cypress + MySQL + GitHub Actions
+# Cypress + localhost/phpmyadmin + GitHub Actions
 
-Este projeto é um exemplo de teste **fullstack** utilizando **Cypress**, **MySQL** e **GitHub Actions**. A ideia é fornecer uma aplicação simples em PHP com **frontend em Bootstrap**, que interage com um banco de dados MySQL, e que será testada usando **Cypress** para garantir que as funcionalidades estão funcionando corretamente.
+Este projeto é um exemplo de teste **fullstack** utilizando **Cypress**, **localhost/phpmyadmin** e **GitHub Actions**. A ideia é fornecer uma aplicação simples em PHP com **frontend em Bootstrap**, que interage com um banco de dados localhost/phpmyadmin, e que será testada usando **Cypress** para garantir que as funcionalidades estão funcionando corretamente.
 
 ## Objetivo
 
@@ -8,7 +8,7 @@ O objetivo deste projeto é demonstrar como realizar testes **automatizados** de
 
 - **Frontend em HTML e Bootstrap** para interface do usuário.
 - **Backend em PHP** para manipulação de dados.
-- **Banco de dados MySQL** para armazenar dados de usuários, postagens e comentários.
+- **Banco de dados localhost/phpmyadmin** para armazenar dados de usuários, postagens e comentários.
 - **Cypress** para realizar testes end-to-end na aplicação.
 - **GitHub Actions** para automação de testes durante o ciclo de CI/CD.
 
@@ -21,7 +21,7 @@ O objetivo deste projeto é demonstrar como realizar testes **automatizados** de
 
 - **Frontend**: HTML, CSS (Bootstrap).
 - **Backend**: PHP.
-- **Banco de Dados**: MySQL.
+- **Banco de Dados**: localhost/phpmyadmin.
 - **Testes**: Cypress.
 - **CI/CD**: GitHub Actions.
 
@@ -31,13 +31,13 @@ O objetivo deste projeto é demonstrar como realizar testes **automatizados** de
 
 ```bash
 git clone https://github.com/GbrlSouza/WebSiteCypressTest.git
-cd fullstack-test
+cd WebSiteCypressTest
 ```
 Agora, você pode acessar a aplicação em `http://localhost/WebSiteCypressTest/index.php`.
 
 ### 2. Configurar o Banco de Dados
 
-1. Crie um banco de dados no seu servidor MySQL e importe o script de criação do banco.
+1. Crie um banco de dados no seu servidor localhost/phpmyadmin e importe o script de criação do banco.
 2. Altere as credenciais no arquivo `includes/db.php` com as informações do seu banco de dados:
 
 ```php
@@ -46,7 +46,6 @@ $username = "root";
 $password = "";
 $dbname = "test";
 ```
-
 
 ### 3. Rodar os Testes com Cypress
 
