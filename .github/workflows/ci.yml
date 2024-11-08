@@ -18,6 +18,9 @@ jobs:
       - name: Install Cypress
         run: npx cypress install
 
+      - name: Run Cypress Tests
+        run: npx cypress run
+
       - name: Upload Cypress Screenshots
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -47,12 +50,9 @@ jobs:
           
           if [ -d "$LOG_DIR" ]; then
             LOG_COUNT=$(find "$LOG_DIR" -type f | wc -l)
-
             echo "Número de logs na pasta: $LOG_COUNT"
-
             if [ $LOG_COUNT -gt $LOG_LIMIT ]; then
               FILES_TO_DELETE=$(find "$LOG_DIR" -type f -print0 | xargs -0 ls -t | tail -n +$(($LOG_LIMIT + 1)))
-
               for FILE in $FILES_TO_DELETE; do
                 echo "Deleting log file $FILE due to log limit"
                 rm "$FILE"
@@ -68,15 +68,11 @@ jobs:
         run: |
           SCREENSHOT_DIR="cypress/screenshots"
           SCREENSHOT_LIMIT=100
-
           if [ -d "$SCREENSHOT_DIR" ]; then
             SCREENSHOT_COUNT=$(find "$SCREENSHOT_DIR" -type f | wc -l)
-
             echo "Número de screenshots na pasta: $SCREENSHOT_COUNT"
-
             if [ $SCREENSHOT_COUNT -gt $SCREENSHOT_LIMIT ]; then
               FILES_TO_DELETE=$(find "$SCREENSHOT_DIR" -type f -print0 | xargs -0 ls -t | tail -n +$(($SCREENSHOT_LIMIT + 1)))
-
               for FILE in $FILES_TO_DELETE; do
                 echo "Deleting screenshot $FILE due to screenshot limit"
                 rm "$FILE"
@@ -92,15 +88,11 @@ jobs:
         run: |
           VIDEO_DIR="cypress/videos"
           VIDEO_LIMIT=100
-
           if [ -d "$VIDEO_DIR" ]; then
             VIDEO_COUNT=$(find "$VIDEO_DIR" -type f | wc -l)
-
             echo "Número de vídeos na pasta: $VIDEO_COUNT"
-
             if [ $VIDEO_COUNT -gt $VIDEO_LIMIT ]; then
               FILES_TO_DELETE=$(find "$VIDEO_DIR" -type f -print0 | xargs -0 ls -t | tail -n +$(($VIDEO_LIMIT + 1)))
-
               for FILE in $FILES_TO_DELETE; do
                 echo "Deleting video $FILE due to video limit"
                 rm "$FILE"
