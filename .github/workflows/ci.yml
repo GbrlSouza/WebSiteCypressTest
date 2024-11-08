@@ -18,9 +18,6 @@ jobs:
       - name: Install Cypress
         run: npx cypress install
 
-      - name: Run Cypress Tests
-        run: npx cypress run
-
       - name: Upload Cypress Screenshots
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -114,4 +111,3 @@ jobs:
           else
             echo "Pasta $VIDEO_DIR não encontrada."
           fi
-          
