@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="7.747" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-11-08T20:10:37" tests="0" file="cypress\e2e\add_user.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Adicionar Usuário" timestamp="2024-11-08T20:10:37" tests="3" time="7.739" failures="0">
+    <testcase name="Adicionar Usuário deve exibir o formulário de adição de usuário" time="1.134" classname="deve exibir o formulário de adição de usuário">
+    </testcase>
+    <testcase name="Adicionar Usuário deve adicionar um usuário com informações válidas" time="1.570" classname="deve adicionar um usuário com informações válidas">
+    </testcase>
+    <testcase name="Adicionar Usuário não deve permitir adicionar um usuário com email duplicado" time="2.994" classname="não deve permitir adicionar um usuário com email duplicado">
+    </testcase>
+  </testsuite>
+</testsuites>
