@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.884" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-11-08T19:53:14" tests="0" file="cypress\e2e\index.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Página Inicial" timestamp="2024-11-08T19:53:14" tests="4" time="3.874" failures="0">
+    <testcase name="Página Inicial deve exibir o título correto" time="0.681" classname="deve exibir o título correto">
+    </testcase>
+    <testcase name="Página Inicial deve carregar a lista de usuários" time="0.589" classname="deve carregar a lista de usuários">
+    </testcase>
+    <testcase name="Página Inicial deve exibir o botão &quot;Adicionar Novo Usuário&quot;" time="0.596" classname="deve exibir o botão &quot;Adicionar Novo Usuário&quot;">
+    </testcase>
+    <testcase name="Página Inicial deve redirecionar para a página de adicionar usuário ao clicar no botão" time="0.672" classname="deve redirecionar para a página de adicionar usuário ao clicar no botão">
+    </testcase>
+  </testsuite>
+</testsuites>
