@@ -1,4 +1,4 @@
-# Fullstack Test - Cypress + localhost/phpmyadmin + GitHub Actions
+# Cypress + localhost/phpmyadmin + GitHub Actions
 
 Este projeto é um exemplo de teste **fullstack** utilizando **Cypress**, **localhost/phpmyadmin** e **GitHub Actions**. A ideia é fornecer uma aplicação simples em PHP com **frontend em Bootstrap**, que interage com um banco de dados localhost/phpmyadmin, e que será testada usando **Cypress** para garantir que as funcionalidades estão funcionando corretamente.
 
